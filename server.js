@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const db = require("./db");
 const jadwalEndpoint = require("./routes/jadwal");
-const anggaranEndpoint = require("./routes/anggaran");
 
 const app = express();
 const port = 3001;
@@ -14,7 +13,6 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/jadwal", jadwalEndpoint);
-app.use("/api/anggaran", anggaranEndpoint);
 
 db.connect((err) => {
   if (err) {
